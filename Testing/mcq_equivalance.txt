@@ -1,0 +1,60 @@
+https://qtp.blogspot.com/2010/06/equivalence-partitioning-multiple.html
+
+
+
+
+
+
+
+1. What is an equivalence partition (also known as an equivalence class)?
+
+b). An input or output range of values such that only one value in the range becomes a test case.
+
+
+
+
+
+2. One of the fields on a form contains a text box which accepts numeric values in the range of 18 to 25.
+
+a) 17
+
+
+
+
+3. In a Examination a candidate has to score minimum of 24 marks inorder to clear the exam. The maximum that he can score is 40 marks. Identify the Valid Equivalence values if the student clears the exam.
+
+c) 29,30,31
+
+
+
+4. One of the fields on a form contains a text box which accepts alpha numeric values. Identify the Valid
+
+c) Boo01k
+
+
+
+5. The Switch is switched off once the temperature falls below 18 and then it is turned on when the temperature is more than 21. When the temperature is more than 21. Identify the Equivalence values which belong to the same class.
+
+c) 22,23,24
+
+
+
+6. c. 3,10,22
+
+7. a) Less than 1, 1 through 12, larger than 12
+
+8. b. 9,10,21,22
+
+9. d) £5800; £28000; £32000
+
+10. c) 10000, 50000, 99999
+
+11. c. A black box testing technique appropriate to all levels of testing
+
+12. a. Less than 1, 1 through 15, more than 15
+
+13. d. No card, other cards, any of Visa – Master – Amex
+
+14. C 18, 29, 30.
+
+15. d. CLa01ss

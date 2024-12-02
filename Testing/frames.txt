@@ -1,0 +1,24 @@
+from main page to frame:driver.switchto.frame(index),driver.switchto.frame(driver.findelement(by.xpath("//iframe[@id='frame1']")
+ 
+child frame start with index 0
+ 
+driver.switchto.parentframe()
+ 
+driver.switchto.defaultcontent
+
+https://demoqa.com/frames
+
+
+Exceptions:
+
+No Such Element exception
+ 
+No such Frame exception
+ 
+No Alert Exception
+ 
+Implicit wait-No such element exception
+
+Explicit - Timeout Exception
+
+findelements(empty list)

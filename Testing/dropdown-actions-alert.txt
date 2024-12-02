@@ -1,0 +1,142 @@
+for(int i=0;i<count;i++)
+
+{
+
+  WebElement elmeent=   alloptions.get[i];
+
+print(element.get(text))
+
+}
+ 
+System.setProperty("webdriver.chrome.driver", "C:\\Users\\Plabani\\eclipse-workspace\\OrangeHRM_2111\\src\\test\\resources\\chromedriver.exe");
+WebDriver driver=new ChromeDriver();//downcasting
+driver.get("https://demowebshop.tricentis.com/books?orderby=10");
+Actions act=new Actions(driver);
+WebElement element=   driver.findElement(By.xpath("(//a[contains(text(),'Computers')])[1]"));
+ 
+act.moveToElement(element).perform();
+ 
+--------------------------------------
+ 
+System.setProperty("webdriver.chrome.driver", "C:\\Users\\Plabani\\eclipse-workspace\\OrangeHRM_2111\\src\\test\\resources\\chromedriver.exe");
+WebDriver driver=new ChromeDriver();//downcasting
+driver.get("https://demowebshop.tricentis.com/books?orderby=10");
+Actions act=new Actions(driver);
+WebElement element=   driver.findElement(By.xpath("(//a[contains(text(),'Computers')])[1]"));
+ 
+act.contextClick(element).perform();
+ 
+https://demo.guru99.com/test/simple_context_menu.html
+ 
+package Day1;
+ 
+import org.openqa.selenium.Alert;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
+ 
+public class OpenURL {
+ 
+	public static void main(String[] args) throws InterruptedException {
+		// TODO Auto-generated method stub
+System.setProperty("webdriver.chrome.driver", "C:\\Users\\Plabani\\eclipse-workspace\\OrangeHRM_2111\\src\\test\\resources\\chromedriver.exe");
+WebDriver driver=new ChromeDriver();//downcasting
+driver.get("https://demo.guru99.com/test/simple_context_menu.html");
+WebElement element1=driver.findElement(By.xpath("//button[text()='Double-Click Me To See Alert']"));
+Actions act=new Actions(driver);
+act.doubleClick(element1).perform();
+Alert a=driver.switchTo().alert();
+System.out.println(a.getText());
+a.accept();//Ok
+//a.dismiss();//cancel
+ 
+ 
+ 
+ 
+/*Actions act=new Actions(driver);
+*
+*
+ 
+WebElement element=   driver.findElement(By.xpath("(//a[contains(text(),'Computers')])[1]"));
+ 
+act.contextClick(element).perform();
+ 
+ 
+ 
+ 
+/*
+Thread.sleep(4000);
+driver.findElement(By.name("username")).sendKeys("Admin");
+driver.findElement(By.name("password")).sendKeys("admin123");
+driver.findElement(By.xpath("//button[@type='submit']")).click();
+Thread.sleep(4000);
+ 
+WebElement element=driver.findElement(By.xpath("//span[text()='Admin']"));
+System.out.println(element.getTagName());
+System.out.println(element.getText());
+element.click();
+ 
+ 
+ 
+ 
+/*driver.navigate().to("https://www.google.com/");
+driver.navigate().back();
+driver.navigate().forward();
+driver.manage().window().maximize();
+System.out.println(driver.getTitle());
+System.out.println(driver.getCurrentUrl());
+System.out.println(driver.getPageSource());
+Thread.sleep(5000);
+//driver.close();//Parent tab
+driver.quit();//Parent & child tab both*/
+ 
+	}
+ 
+}
+
+
+sample web:  https://www.softwaretestingmaterial.com/sample-webpage-to-automate/
+ 
+ 
+html
+ 
+  body
+ 
+ 
+    table
+ 
+ 
+       td
+        input1
+        input2
+//td//following::input1
+ 
+//td//preceding::input2
+ 
+ 
+Xpath axes
+ 
+::
+ 
+following
+preceding
+desendent
+child
+parent
+has context menu
+
+
+has context menu
+
+
+
+
+Assignments:
+1. https://blazedemo.com/
+2. https://demoqa.com/alerts
+3. https://toolsqa.com/
+
+
+

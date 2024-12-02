@@ -1,0 +1,40 @@
+Registration:
+Name: It can be till 100 character
+Email id: @gmail.com
+Username:alphanumeric.5 to 10
+password:same
+Confirm Password:
+Mobile number +91 10digit number
+ 
+submit
+ 
+OTP
+ 
+  (4 digit)
+ 
+     send
+
+
+Positive side:
+
+1. name: Sivalakshmi
+2. email.siva@gmail.com
+3. username: siva123
+4. pass: Siva@2002
+5. confim: Siva@2002
+6. mobile : +91 8989855634
+7. 4 digit verification
+8. submit
+
+
+
+
+
+negative:
+1. Name : more than 100
+2. email: field mandatory, different dom name, siva@gmail
+3. username: fewer than 5
+4. password: mismatch
+5. mobile: less than 10 / alphabet
+6. otp: invalid number, alphabets
+7. submit: incomplete, invalid

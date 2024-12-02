@@ -1,0 +1,137 @@
+package Day1;
+ 
+import java.util.concurrent.TimeUnit;
+ 
+import org.openqa.selenium.Alert;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+ 
+public class OpenURL {
+ 
+	public static void main(String[] args) throws InterruptedException {
+		// TODO Auto-generated method stub
+System.setProperty("webdriver.chrome.driver", "C:\\Users\\Plabani\\eclipse-workspace\\OrangeHRM_2111\\src\\test\\resources\\chromedriver.exe");
+WebDriver driver=new ChromeDriver();//downcasting
+driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+driver.get("https://demo.guru99.com/test/simple_context_menu.html");
+WebElement element1=driver.findElement(By.xpath("//button[text()='Double-Click Me To See Alert']"));
+Actions act=new Actions(driver);
+act.doubleClick(element1).perform();
+Alert a=driver.switchTo().alert();
+System.out.println(a.getText());
+a.accept();//Ok
+//a.dismiss();//cancel
+WebDriverWait wait=new WebDriverWait(driver, 5);
+if
+{
+wait.until(ExpectedConditions.titleContains("OrangeHRM"));
+ 
+System.out.println("page loaded");
+}
+else
+{
+	System.out.println("page not loaded");
+ 
+	
+}
+ 
+ 
+ 
+/*Actions act=new Actions(driver);
+*
+*
+ 
+WebElement element=   driver.findElement(By.xpath("(//a[contains(text(),'Computers')])[1]"));
+ 
+act.contextClick(element).perform();
+ 
+ 
+ 
+ 
+/*
+Thread.sleep(4000);
+driver.findElement(By.name("username")).sendKeys("Admin");
+driver.findElement(By.name("password")).sendKeys("admin123");
+driver.findElement(By.xpath("//button[@type='submit']")).click();
+Thread.sleep(4000);
+ 
+WebElement element=driver.findElement(By.xpath("//span[text()='Admin']"));
+System.out.println(element.getTagName());
+System.out.println(element.getText());
+element.click();
+ 
+ 
+ 
+ 
+/*driver.navigate().to("https://www.google.com/");
+driver.navigate().back();
+driver.navigate().forward();
+driver.manage().window().maximize();
+System.out.println(driver.getTitle());
+System.out.println(driver.getCurrentUrl());
+System.out.println(driver.getPageSource());
+Thread.sleep(5000);
+//driver.close();//Parent tab
+driver.quit();//Parent & child tab both*/
+ 
+	}
+ 
+}
+
+
+
+
+using try and catch:
+
+WebDriverWait wait=new WebDriverWait(driver, 5);
+try
+{
+wait.until(ExpectedConditions.titleContains("OrangeHRM"));
+ 
+System.out.println("page loaded");
+}
+catch(Exception e)
+{
+	System.out.println("page not loaded");
+ 
+	
+}
+
+
+
+
+getWindowHandle nd Handles:
+
+
+
+String parent_handle= driver.getWindowHandle();
+System.out.println(parent_handle);
+Set<String> handles = driver.getWindowHandles();
+System.out.println(handles);
+for(String name:handles)
+    if(!parent_handle.equals(name))
+    {
+        driver.switchTo().window(name);
+        break;
+ 
+}
+
+
+String parent_handle= driver.getWindowHandle();
+System.out.println(parent_handle);
+Set<String> handles = driver.getWindowHandles();
+System.out.println(handles);
+for(String name:handles)
+    if(!parent_handle.equals(name))
+    {
+        driver.switchTo().window(name);
+        break;
+ 
+}
+
+link:https://toolsqa.com/

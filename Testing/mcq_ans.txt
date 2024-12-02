@@ -1,0 +1,67 @@
+1. A shopping website gives discount based on prices of total purchased items. Suppose customer purchases are below 2000 rs. then no discount,for purchases till 20000, it gives 10% discount and above 20000 it gives 15% discount. Which of the following sets of values lie in 3 different equivalence classes?
+
+c) 1800, 2003,58,000
+
+
+2. c) 1500,1501,2000,2001
+
+
+3. c) 2,3,10,11,59,60,100,101
+
+
+4. c) aPPle
+
+5. "b) 2,3,25,26
+
+6. "b) 51, 52, 53
+
+
+7. "a) 17, 18, 19
+
+
+8. "a) After system testing is done
+
+
+9. "c. 52, 60, 99
+
+10. b.False
+
+11. 3. Test strategy
+
+12. A.Functional Testing
+
+13. A.Developer's End
+
+14. b) White box testing
+
+15. b) Structural testing
+
+16. C.Adhoc Testing
+
+17. A.Exhaustive testing
+
+18. a) Design based testing
+
+
+19. "C.Incident reports
+
+
+20. C.Adhoc Testing
+
+21. 2. Mutation testing
+
+22. C.Driver
+
+23. "c) Test planning
+
+24. a) Fault masking
+
+25. "a) By performing State transition testing
+
+26. "C) latent defect
+
+27.A.True
+
+28. "B) Low, Major, Critical
+
+29. None 

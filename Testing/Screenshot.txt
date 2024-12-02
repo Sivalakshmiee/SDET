@@ -1,0 +1,98 @@
+<!-- https://mvnrepository.com/artifact/commons-io/commons-io -->
+<dependency>
+<groupId>commons-io</groupId>
+<artifactId>commons-io</artifactId>
+<version>2.18.0</version>
+</dependency>
+
+
+TakesScreenshot t=(TakesScreenshot)driver;
+File src=t.getScreenshotAs(OutputType.FILE);
+File dest=new File("C:\\Users\\Plabani\\Documents\\MY\\2611.jpeg");
+FileUtils.copyFile(src, dest);
+
+
+POM(page object model):
+
+package Day1;
+ 
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+ 
+public class LoginPage {
+	//Declaration
+ 
+	@FindBy(xpath="//input[@name='username']")
+	WebElement txtusername;
+	
+ 
+	@FindBy(name="password")
+	WebElement txtPassword;
+	
+	@FindBy(xpath="//button[@type='submit']")
+	WebElement buttonLogin;
+	
+	//Initialization
+	
+	LoginPage(WebDriver driver)
+	{
+		PageFactory.initElements(driver,this);
+	}
+ 
+	//Utilization
+	
+	public void verifyUsername(String str)
+{
+		txtusername.sendKeys(str);
+}
+	
+	public void verifyPassword(String str)
+{
+		txtPassword.sendKeys(str);
+}
+	
+	public void buttonclick()
+	{
+		buttonLogin.click();
+	}
+}
+ 
+ 
+--------------------------------
+ 
+package Day1;
+ 
+import java.util.concurrent.TimeUnit;
+ 
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+ 
+public class ValidateFunctionality {
+ 
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		System.setProperty("webdriver.chrome.driver", "C:\\Users\\Plabani\\eclipse-workspace\\OrangeHRM_2111\\src\\test\\resources\\chromedriver.exe");
+		WebDriver driver=new ChromeDriver();//downcasting
+		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+		LoginPage lp=new LoginPage(driver);
+		driver.get("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login");
+		lp.verifyUsername("Admin");
+		lp.verifyPassword("admin123");
+		lp.buttonclick();
+		
+	}
+ 
+}
+
+
+
+
+
+
+
+
+link: https://petstore.octoperf.com/actions/Catalog.action
+ 
+ 

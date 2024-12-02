@@ -1,0 +1,243 @@
+package Generic;
+ 
+import java.util.concurrent.TimeUnit;
+ 
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+ 
+public class DriverUtils {
+	static WebDriver driver;
+	public static void createDriver()
+	{
+		System.setProperty("webdriver.chrome.driver","C:\\\\Users\\\\Plabani\\\\eclipse-workspace\\\\OrangeHRM_2111\\\\src\\\\test\\\\resources\\\\chromedriver.exe");
+	    driver=new ChromeDriver();
+		//driver.get("https://opensource-demo.orangehrmlive.com/");
+		driver.manage().window().maximize();
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+	}
+	
+	public static WebDriver getDriver()
+	{
+		if(driver== null) {
+		createDriver();
+		}
+		return driver;
+	}
+}
+ 
+ 
+------------------------------------
+ 
+package POM;
+ 
+import org.openqa.selenium.WebDriver;
+
+import org.openqa.selenium.WebElement;
+
+import org.openqa.selenium.support.FindBy;
+
+import org.openqa.selenium.support.PageFactory;
+ 
+public class LoginPage extends BasePage {
+
+	//Declaration
+ 
+	@FindBy(xpath="//input[@name='username']")
+
+	WebElement txtusername;
+
+ 
+	@FindBy(name="password")
+
+	WebElement txtPassword;
+
+	@FindBy(xpath="//button[@type='submit']")
+
+	WebElement buttonLogin;
+
+	//Initialization
+
+ 
+	//Utilization
+
+	public void verifyUsername(String str)
+
+{
+
+		txtusername.sendKeys(str);
+
+}
+
+	public void verifyPassword(String str)
+
+{
+
+		txtPassword.sendKeys(str);
+
+}
+
+	public void buttonclick()
+
+	{
+
+		buttonLogin.click();
+
+	}
+
+}
+
+ 
+---------------------------
+ 
+package POM;
+ 
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.PageFactory;
+ 
+import Generic.DriverUtils;
+ 
+public class BasePage {
+	WebDriver driver;
+ 
+	public BasePage()
+	{
+	driver=DriverUtils.getDriver();
+	PageFactory.initElements(driver,this);
+	}
+}
+ 
+ 
+-------------------------------------------------------
+ 
+package Test;
+ 
+import java.util.concurrent.TimeUnit;
+ 
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.Test;
+ 
+import Generic.DriverUtils;
+import POM.LoginPage;
+ 
+public class VerifyTest {
+	
+	@Test
+	public void LoginTest()
+	{
+		
+	
+	System.setProperty("webdriver.chrome.driver", "C:\\Users\\Plabani\\eclipse-workspace\\OrangeHRM_2111\\src\\test\\resources\\chromedriver.exe");
+	WebDriver driver=new ChromeDriver();//downcasting
+    DriverUtils.getDriver().get("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login");
+    LoginPage lp=new LoginPage();
+    lp.verifyUsername("Admin");
+    lp.verifyPassword("admin123");
+    lp.buttonclick();
+}
+ 
+}
+
+
+
+
+Cucumber - BDD
+
+Feature:  Login OrangeHRM
+  
+  
+  #Author: Plabani
+ 
+Scenario: Verify Login Functionality
+    Given Open Browser
+    When Enter Username "admin" and password "admin123"
+    And Click Login
+    Then Login Successful
+    
+    
+Scenario:
+    Given Open Browser
+    When Enter Username "admin" and password "admin123"
+    And Click Login
+    Then Login Successful
+    And Click Admin Button
+ 
+package StepDef;
+ 
+import Generic.DriverUtils;
+import POM.LoginPage;
+import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
+ 
+public class VerifyLoginSteps {
+	LoginPage lp=new LoginPage();
+	@Given("Open Browser")
+	public void open_browser() {
+	    DriverUtils.getDriver().get("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login");
+	}
+ 
+	@When("Enter Username {string} and password {string}")
+	public void enter_username_and_password(String string, String string2) {
+	   lp.verifyUsername("Admin");
+	   lp.verifyPassword("admin123");
+	}
+ 
+	@When("Click Login")
+	public void click_login() {
+	    lp.buttonclick();
+	}
+ 
+	@Then("Login Successful")
+	public void login_successful() {
+	 System.out.println( DriverUtils.getDriver().getTitle());
+	}
+ 
+ 
+}
+
+
+
+  Scenario Outline: Test
+    Given Open Browser
+    When Enter Username "<username>" and password "<password>"
+    And Click Login
+    Then Login Successful
+ 
+   Examples:
+      | username | password |
+      | login.username   | login.password   |
+      | invalid.username | valid.password   |
+      | valid.username   | invalid.password |
+ 
+ 
+package StepDef;
+ 
+import org.junit.runner.RunWith;
+ 
+import io.cucumber.junit.Cucumber;
+
+import io.cucumber.junit.CucumberOptions;
+ 
+@RunWith(Cucumber.class)
+
+@CucumberOptions(features="C:\\Users\\Plabani\\eclipse-workspace\\OrangeHRM_2111\\src\\test\\resources\\Feature",glue = "Stepdef",plugin = "html:target/cucumber.html")
+
+public class Ru {
+ 
+}
+
+ 
+ https://techno-geeks.co.in/Selenium_MCQ_series_2.html
+
+https://www.cppbuzz.com/selenium/selenium-multiple-choice-questions#google_vignette
+
+https://qaautomation.expert/2024/05/15/selenium-multiple-choice-questions-mcq3/
+
+https://www.cppbuzz.com/selenium/selenium-multiple-choice-questions
+
+https://docs.google.com/spreadsheets/d/12g_8twnx96CaB1QXt3RVBxqKTuwqroQ-/edit?gid=345898905#gid=345898905
+
+assert link: https://www.browserstack.com/guide/verify-and-assert-in-selenium
+ 
+ 

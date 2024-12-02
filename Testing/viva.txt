@@ -1,0 +1,25 @@
+1)What is STLC
+ 
+2)What is retesting and regression testing
+ 
+4)type of testing
+ 
+5)testing techniques
+ 
+6)example of high priority,medium priority,low priority
+ 
+6)What is RTM
+ 
+7)What is difference Bug,Failure
+ 
+What is test-scenario,testcase
+ 
+https://docs.google.com/spreadsheets/d/17gOtFe1bTILzUSdBet6IbjaHQ6g4sEwd/edit?gid=1417739573#gid=1417739573
+
+
+
+
+material:
+
+https://drive.google.com/file/d/1yrO5nsK0bHvpwBpaHjigfNmlXxb0CPJO/view?usp=sharing
+ 

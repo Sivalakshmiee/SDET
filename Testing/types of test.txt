@@ -1,0 +1,22 @@
+https://demowebshop.tricentis.com/
+
+
+
+
+
+Jira,Bugzilla,version control,QC alm
+   Create Defect
+Summary:Username not accepting alphanumeric value.
+Description:
+1)Open website
+2)Enter Username "Alex@1234"
+Expected Result:It should accept
+Actual: Not accepting
+Assignee:John
+Priority:High
+Attach:
+  Submit
+Defect Id:AMazon_001
+
+
+link: https://opensource-demo.orangehrmlive.com/web/index.php/dashboard/index

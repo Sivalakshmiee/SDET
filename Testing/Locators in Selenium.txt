@@ -1,0 +1,138 @@
+Locators in Selenium:
+
+id
+
+name
+
+classname
+
+xpath
+
+linktext
+
+partiallinktext
+
+tagname
+
+css selector
+ 
+ 
+Xpath:
+ 
+Absolute Xpath:
+
+html
+
+  body
+ 
+      table
+
+         td
+ 
+html/body/table/td
+
+/=IMMEDIATE CHILD
+
+Relative xpath:
+
+any child
+
+//td
+ 
+ 
+Relative xpath:
+ 
+xpath by attribute:
+ 
+//tagname[@attribute='Value']
+ 
+//button[@type='submit']
+ 
+package Day1;
+ 
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+ 
+public class OpenURL {
+ 
+	public static void main(String[] args) throws InterruptedException {
+		// TODO Auto-generated method stub
+System.setProperty("webdriver.chrome.driver", "C:\\Users\\Plabani\\eclipse-workspace\\OrangeHRM_2111\\src\\test\\resources\\chromedriver.exe");
+WebDriver driver=new ChromeDriver();//downcasting
+driver.get("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login");
+ 
+Thread.sleep(4000);
+driver.findElement(By.name("username")).sendKeys("Admin");
+driver.findElement(By.name("password")).sendKeys("admin123");
+driver.findElement(By.xpath("//button[@type='submit']")).click();
+Thread.sleep(4000);
+ 
+driver.findElement(By.xpath("//span[text()='Admin']")).click();
+ 
+ 
+//a[@class='ico-register']
+ 
+//a[text()='Register']
+ 
+xpath by contains:
+ 
+//tagname[contains('text()','value')
+ 
+(//a[contains(text(),'Books')])[1]
+
+
+linktext
+
+partiallinktext
+
+tagname
+
+css selector
+
+
+
+
+
+
+driver.findElement(By.name("username")).sendKeys("Admin");
+driver.findElement(By.name("password")).sendKeys("admin123");
+driver.findElement(By.xpath("//button[@type='submit']")).click();
+Thread.sleep(4000);
+ 
+WebElement element=driver.findElement(By.xpath("//span[text()='Admin']"));
+System.out.println(element.getTagName());
+System.out.println(element.getText());
+element.click();
+
+
+
+https://www.saucedemo.com/
+
+Login
+ 
+select product
+ 
+display text
+ 
+click add to cart
+ 
+go to cart option
+ 
+print complete information
+ 
+finish
+ 
+Id
+ 
+name
+ 
+tagname
+ 
+linktext
+ 
+partial link text
+ 
+css
+ 
+ 

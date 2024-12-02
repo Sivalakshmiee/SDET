@@ -1,0 +1,40 @@
+<!-- https://mvnrepository.com/artifact/org.testng/testng -->
+<dependency>
+<groupId>org.testng</groupId>
+<artifactId>testng</artifactId>
+<version>7.10.2</version>
+<scope>test</scope>
+</dependency>
+
+ 
+https://mvnrepository.com/artifact/org.testng/testng/7.10.2
+ 
+public class Dependent {
+  @Test (dependsOnMethods = { "OpenBrowser" })
+  public void SignIn() {
+	  System.out.println("This will execute second (SignIn)");
+  }
+  @Testpublic void OpenBrowser() {
+	  System.out.println("This will execute first (Open Browser)");
+  }
+}
+
+implement:
+Test NG
+ 
+Use Priority
+ 
+Before /After 
+ 
+Groups
+ 
+TestNG Parameters
+ 
+DataProvider
+ 
+
+material link: https://docs.google.com/presentation/d/1z3y53FPDd72MxMTYWOD8Qw2yAgqshpQD/edit#slide=id.p1
+
+
+ 
+
